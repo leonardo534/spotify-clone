@@ -1,3 +1,8 @@
 <resources>
+
     <string name="app_name">Spotify Clone</string>
+    <string name="cadastro">Inscreva-se grátis</string>
+    <string name="login_facebook">continuar com o \nfacebook</string>
+    <string name="login">entrar</string>
+
 </resources>
