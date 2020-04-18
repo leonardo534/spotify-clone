@@ -3,14 +3,18 @@ package com.leonardosilva.spotifyclone.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.leonardosilva.spotifyclone.R;
 
 /**
@@ -19,6 +23,9 @@ import com.leonardosilva.spotifyclone.R;
 public class LoginFragment extends Fragment {
 
     private ImageButton imageButtonVoltar;
+    private EditText editTextEmail;
+    private TextInputEditText editTextSenha;
+    Button buttonLoginEmail;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -32,6 +39,9 @@ public class LoginFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
         imageButtonVoltar = view.findViewById(R.id.imageButtonVoltar);
+        editTextEmail = view.findViewById(R.id.editTextEmail);
+        editTextSenha = view.findViewById(R.id.editTextSenha);
+        buttonLoginEmail = view.findViewById(R.id.buttonLoginEmail);
 
         imageButtonVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +49,49 @@ public class LoginFragment extends Fragment {
                 getActivity().getSupportFragmentManager().popBackStack();
             }
         });
+
+        editTextEmail.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                verificar();
+
+            }
+        });
+
+        editTextSenha.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                verificar();
+            }
+        });
         return view;
+    }
+
+    private void verificar() {
+        if ((editTextEmail.getText().length() == 0) || (editTextSenha.getText().length() == 0)) {
+            buttonLoginEmail.setEnabled(false);
+        } else {
+            buttonLoginEmail.setEnabled(true);
+        }
     }
 }
