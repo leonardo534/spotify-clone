@@ -1,8 +1,10 @@
 package com.leonardosilva.spotifyclone.fragments;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -25,7 +27,9 @@ public class LoginFragment extends Fragment {
     private ImageButton imageButtonVoltar;
     private EditText editTextEmail;
     private TextInputEditText editTextSenha;
-    Button buttonLoginEmail;
+    private Button buttonLoginEmail;
+    private Button buttonEsqueceuSenha;
+    private RecuperarSenhaFragment recuperarSenhaFragment;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -42,6 +46,7 @@ public class LoginFragment extends Fragment {
         editTextEmail = view.findViewById(R.id.editTextEmail);
         editTextSenha = view.findViewById(R.id.editTextSenha);
         buttonLoginEmail = view.findViewById(R.id.buttonLoginEmail);
+        buttonEsqueceuSenha = view.findViewById(R.id.buttonEsqueceuSenha);
 
         imageButtonVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +89,18 @@ public class LoginFragment extends Fragment {
                 verificar();
             }
         });
+
+        buttonEsqueceuSenha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recuperarSenhaFragment = new RecuperarSenhaFragment();
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frameLayout, recuperarSenhaFragment);
+                transaction.addToBackStack("pilha");
+                transaction.commit();
+            }
+        });
+
         return view;
     }
 
