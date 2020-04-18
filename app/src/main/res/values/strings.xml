@@ -4,5 +4,8 @@
     <string name="cadastro">Inscreva-se grátis</string>
     <string name="login_facebook">continuar com o \nfacebook</string>
     <string name="login">entrar</string>
+    <string name="text_email">E-mail ou nome de usuário</string>
+    <string name="text_senha">Senha</string>
+    <string name="entrar">entrar</string>
 
 </resources>
