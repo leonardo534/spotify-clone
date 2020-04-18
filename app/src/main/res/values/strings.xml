@@ -7,5 +7,6 @@
     <string name="text_email">E-mail ou nome de usuário</string>
     <string name="text_senha">Senha</string>
     <string name="entrar">entrar</string>
+    <string name="esqueceu_sua_senha">esqueceu sua senha?</string>
 
 </resources>
