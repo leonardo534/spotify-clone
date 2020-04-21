@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xml:tools="http://schemas.android.com/tools">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:checked="true"
+            android:icon="@drawable/nav_bottom_item_selector_home"
+            android:title="Início"/>
+        <item
+            android:id="@+id/nav_search"
+            android:checked="true"
+            android:icon="@drawable/ic_nav_search"
+            android:title="Buscar"/>
+        <item
+            android:id="@+id/nav_library"
+            android:checked="true"
+            android:icon="@drawable/ic_nav_library"
+            android:title="Sua Biblioteca"/>
+        <item
+            android:id="@+id/nav_premium"
+            android:checked="true"
+            android:icon="@drawable/ic_nav_premium"
+            android:title="Premium"/>
+    </group>
+</menu>
