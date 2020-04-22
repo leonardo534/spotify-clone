@@ -1,6 +1,7 @@
 package com.leonardosilva.spotifyclone.fragments;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -18,6 +19,7 @@ import android.widget.ImageButton;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.leonardosilva.spotifyclone.R;
+import com.leonardosilva.spotifyclone.activity.MusicasActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -87,6 +89,14 @@ public class LoginFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 verificar();
+            }
+        });
+
+        buttonLoginEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), MusicasActivity.class);
+                startActivity(intent);
             }
         });
 
