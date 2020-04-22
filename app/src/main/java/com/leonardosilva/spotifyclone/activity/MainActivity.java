@@ -1,4 +1,4 @@
-package com.leonardosilva.spotifyclone;
+package com.leonardosilva.spotifyclone.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.leonardosilva.spotifyclone.R;
 import com.leonardosilva.spotifyclone.fragments.LoginFragment;
 
 public class MainActivity extends AppCompatActivity {
