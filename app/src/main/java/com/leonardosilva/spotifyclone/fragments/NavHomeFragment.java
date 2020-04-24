@@ -3,6 +3,7 @@ package com.leonardosilva.spotifyclone.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.FrameLayout;
 
 import com.leonardosilva.spotifyclone.R;
 import com.leonardosilva.spotifyclone.adapter.AdapterTocadaRecente;
@@ -28,12 +31,17 @@ public class NavHomeFragment extends Fragment {
     }
 
     private RecyclerView recyclerTocadasRecente;
+    private Button buttonConfiguracao;
     private List<TocadaRecente> tocadaRecenteList = new ArrayList<>();
+    private ConfiguracaoFragment configuracaoFragment;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_nav_home, container, false);
+
+        buttonConfiguracao = view.findViewById(R.id.buttonConfiguracao);
         recyclerTocadasRecente = view.findViewById(R.id.recyclerTocadasRecente);
         recyclerTocadasRecente.setHasFixedSize(true);
 
@@ -46,8 +54,18 @@ public class NavHomeFragment extends Fragment {
         recyclerTocadasRecente.setItemAnimator(new DefaultItemAnimator());
         recyclerTocadasRecente.setAdapter(adapterTocadaRecente);
 
-
         listarTocadasRecente();
+
+        buttonConfiguracao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                configuracaoFragment = new ConfiguracaoFragment();
+
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frameLayoutMusicas, configuracaoFragment);
+                transaction.commit();
+            }
+        });
         return view;
     }
 
