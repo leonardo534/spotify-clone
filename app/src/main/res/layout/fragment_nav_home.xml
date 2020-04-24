@@ -19,7 +19,7 @@
             app:layout_constraintGuide_percent="0.07" />
 
         <Button
-            android:id="@+id/buttonSettings"
+            android:id="@+id/buttonConfiguracao"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginEnd="16dp"
