@@ -3,6 +3,7 @@ package com.leonardosilva.spotifyclone.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,6 +35,7 @@ public class NavHomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_nav_home, container, false);
         recyclerTocadasRecente = view.findViewById(R.id.recyclerTocadasRecente);
+        recyclerTocadasRecente.setHasFixedSize(true);
 
         //ADAPTER
         AdapterTocadaRecente adapterTocadaRecente = new AdapterTocadaRecente(tocadaRecenteList);
@@ -41,7 +43,7 @@ public class NavHomeFragment extends Fragment {
         //RECYCLERVIEW
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         recyclerTocadasRecente.setLayoutManager(layoutManager);
-        recyclerTocadasRecente.setHasFixedSize(true);
+        recyclerTocadasRecente.setItemAnimator(new DefaultItemAnimator());
         recyclerTocadasRecente.setAdapter(adapterTocadaRecente);
 
 
