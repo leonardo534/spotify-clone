@@ -1,12 +1,15 @@
 package com.leonardosilva.spotifyclone.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import com.leonardosilva.spotifyclone.R;
+import com.leonardosilva.spotifyclone.activity.MusicasActivity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,7 +27,8 @@ public class ConfiguracaoFragment extends Fragment {
         imageButtonVoltarConfiguracao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().getSupportFragmentManager().popBackStack();
+                Intent intent = new Intent(getActivity().getApplicationContext(), MusicasActivity.class);
+                startActivity(intent);
             }
         });
 
