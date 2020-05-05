@@ -1,7 +1,9 @@
 package com.leonardosilva.spotifyclone.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -15,6 +17,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.leonardosilva.spotifyclone.R;
+import com.leonardosilva.spotifyclone.activity.ConfiguracaoActivity;
 import com.leonardosilva.spotifyclone.adapter.AdapterTocadaRecente;
 import com.leonardosilva.spotifyclone.model.TocadaRecente;
 
@@ -58,7 +61,8 @@ public class NavHomeFragment extends Fragment {
         buttonConfiguracao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getActivity().getApplicationContext(), ConfiguracaoActivity.class);
+                startActivity(intent);
             }
         });
         return view;
