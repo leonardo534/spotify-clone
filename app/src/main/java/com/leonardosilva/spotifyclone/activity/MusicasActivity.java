@@ -14,6 +14,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.ActionProvider;
 import android.view.ContextMenu;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
@@ -33,14 +34,28 @@ public class MusicasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_musicas);
-
-        bottomNavigationView = findViewById(R.id.nav_menu);
+        inicializarComponetes();
 
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.frameLayoutMusicas, new NavHomeFragment()).commit();
     }
 
+    private void inicializarComponetes(){
+        bottomNavigationView = findViewById(R.id.nav_menu);
+    }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event){
+
+        if(keyCode == event.KEYCODE_BACK){
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(intent);
+            finish();
+            return true;
+        }else{
+            return super.onKeyDown(keyCode, event);
+        }
+    }
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
