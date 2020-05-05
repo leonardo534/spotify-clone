@@ -33,7 +33,6 @@ public class NavHomeFragment extends Fragment {
     private RecyclerView recyclerTocadasRecente;
     private Button buttonConfiguracao;
     private List<TocadaRecente> tocadaRecenteList = new ArrayList<>();
-    private ConfiguracaoFragment configuracaoFragment;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,11 +58,7 @@ public class NavHomeFragment extends Fragment {
         buttonConfiguracao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                configuracaoFragment = new ConfiguracaoFragment();
 
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frameLayoutMusicas, configuracaoFragment);
-                transaction.commit();
             }
         });
         return view;
