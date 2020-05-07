@@ -19,8 +19,7 @@ public class ConfiguracaoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_configuracao);
         inicializarComponentes();
 
-        imageButtonVoltarConfiguracao.setOnClickListener(new View.OnClickListener()
-        {
+        imageButtonVoltarConfiguracao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MusicasActivity.class);
