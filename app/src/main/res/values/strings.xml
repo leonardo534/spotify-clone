@@ -10,5 +10,6 @@
     <string name="esqueceu_sua_senha">Esqueceu sua senha?</string>
     <string name="aviso_email">Vamos enviar um link de login para o seu e-mail.</string>
     <string name="enviar_link">enviar link</string>
+    <string name="toolbar_configurar">Configurar</string>
 
 </resources>
