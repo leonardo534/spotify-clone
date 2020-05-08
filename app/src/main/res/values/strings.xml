@@ -11,5 +11,6 @@
     <string name="aviso_email">Vamos enviar um link de login para o seu e-mail.</string>
     <string name="enviar_link">enviar link</string>
     <string name="toolbar_configurar">Configurar</string>
+    <string name="seja_premium">Seja premium</string>
 
 </resources>
