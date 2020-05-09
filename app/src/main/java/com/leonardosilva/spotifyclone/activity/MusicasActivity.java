@@ -3,24 +3,14 @@ package com.leonardosilva.spotifyclone.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.ActionProvider;
-import android.view.ContextMenu;
 import android.view.KeyEvent;
 import android.view.MenuItem;
-import android.view.SubMenu;
-import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.internal.NavigationSubMenu;
 import com.leonardosilva.spotifyclone.R;
 import com.leonardosilva.spotifyclone.fragments.NavHomeFragment;
 import com.leonardosilva.spotifyclone.fragments.NavLibraryFragment;
@@ -28,7 +18,7 @@ import com.leonardosilva.spotifyclone.fragments.NavPremiumFragment;
 import com.leonardosilva.spotifyclone.fragments.NavSearchFragment;
 
 public class MusicasActivity extends AppCompatActivity {
-    private BottomNavigationView bottomNavigationView;
+    private BottomNavigationView bottomNavigationMusicas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +26,13 @@ public class MusicasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_musicas);
         inicializarComponetes();
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
+        bottomNavigationMusicas.setOnNavigationItemSelectedListener(navListener);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.frameLayoutMusicas, new NavHomeFragment()).commit();
     }
 
     private void inicializarComponetes(){
-        bottomNavigationView = findViewById(R.id.nav_menu);
+        bottomNavigationMusicas = findViewById(R.id.nav_menu);
     }
 
     public boolean onKeyDown(int keyCode, KeyEvent event){
