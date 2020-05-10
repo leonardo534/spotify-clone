@@ -36,6 +36,8 @@ public class ConfiguracaoActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        bottomNavigationConfigurações.setOnNavigationItemSelectedListener(navListener);
     }
 
     private void inicializarComponentes() {
@@ -50,12 +52,10 @@ public class ConfiguracaoActivity extends AppCompatActivity {
                     Fragment fragmentSelected = null;
                     switch (item.getItemId()) {
                         case R.id.nav_home:
-                            fragmentSelected = new NavHomeFragment();
+                            Intent intent = new Intent(getApplicationContext(), MusicasActivity.class);
                             break;
 
                         case R.id.nav_search:
-                            Intent intent = new Intent(getApplicationContext(), MusicasActivity.class);
-                            startActivity(intent);
                             fragmentSelected = new NavSearchFragment();
                             break;
 
